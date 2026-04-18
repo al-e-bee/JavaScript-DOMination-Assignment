@@ -17,16 +17,22 @@ const quizQuestions = [
     {question: "Which operator is used to check if TWO conditions are both true?", options: ["||", "!", "&&", "++"], correctIndex: 2}, 
     {question: "What is the result of the expression 10 % 3?", options: ["3", "0", "1", "3.33"], correctIndex: 2}, 
     {question: "What do you call the placeholders defined in a function's parentheses?", options: ["Arguments", "Parameters", "Variables", "Indices"], correctIndex: 1}, 
-    {question: "Which of these is the correct way to write an 'if' statement?", options: ["if i = 5 then", "if (i == 5)", "if i == 5", "if {i == 5}"], correctIndex: 1}];
+    {question: "Which of these is the correct way to write an 'if' statement?", options: ["if i = 5 then", "if (i == 5)", "if i == 5", "if {i == 5}"], correctIndex: 1}, 
+    {question: "What does DOM stand for?", options: ["Document Object Model", "Debugging Our Model", "Document Or Modem", "Documented Object Mode"], correctIndex: 0}, 
+    {question: "What type of variable can hold multiple pieces of data at once?", options: ["list", "array", "loop", "document"], correctIndex: 1}, 
+    {question: "What operators represent OR in JavaScript?", options: ["!!", "or", "&&", "||"], correctIndex: 3}];
 
 
 function loadQuestion(){
    const currentQuestion = quizQuestions[currentQuestionIndex];  // Get current question object from array
+   document.getElementById("progress").innerText = `Question ${currentQuestionIndex + 1} of ${quizQuestions.length}`;
 
    questionElement.innerText = currentQuestion.question; // Put the question text into the H1 or Div
 
    optionsElement.innerHTML = ""; // Clear the old options so they don't pile up
 
+   getNextQuestion.disabled = true;
+   
     // Loop through the options and create buttons for each
    currentQuestion.options.forEach((option, index) => {
     const button = document.createElement("button");
@@ -43,6 +49,9 @@ function loadQuestion(){
 function handleAnswer(selectedIndex){
     const currentQuestion = quizQuestions[currentQuestionIndex];
     const buttons = optionsElement.querySelectorAll("button");
+
+
+    getNextQuestion.disabled = false;
 
     buttons.forEach((btn, index) => {
         btn.disabled = true;
@@ -74,6 +83,7 @@ function showScore(){
     quizContainer.classList.add("hidden");
     scoreContainer.classList.remove("hidden");
     scoreText.innerText = `${score} out of ${quizQuestions.length}`;
+    getNextQuestion.disabled = true;
 }
 
 function restart(){

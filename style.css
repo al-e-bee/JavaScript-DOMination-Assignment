@@ -20,6 +20,11 @@ body{
     font-weight: bold;
 }
 
+#progress{
+    font-size: 14px;
+    text-align: center;
+}
+
 #quiz-container{
     display: flex;
     flex-direction: column;
@@ -45,6 +50,13 @@ body{
     color: #141b41;
 }
 
+#next:disabled{
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
 #options-container{
     display: flex;
     flex-direction: column;
@@ -55,7 +67,7 @@ body{
 
 .option-btn{
     padding: 10px 20px;
-    border: none;
+    border: solid 1px #141b41;
     border-radius: 5px;
     color: #141b41;
     background-color: #edf2fb;
@@ -100,6 +112,6 @@ body{
     color: #ff6d00;
 }
 
-.hidden{
+#score-container.hidden{
     display: none;
 }
