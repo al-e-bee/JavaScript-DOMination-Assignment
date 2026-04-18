@@ -16,6 +16,8 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #quiz-container{
@@ -26,7 +28,7 @@ body{
     gap: 75px;
 }
 
-#next-button{
+#next{
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -38,9 +40,31 @@ body{
     color: #ff6d00;
 }
 
-#next-button:hover{
+#next:hover{
     background-color: #ff6d00;
     color: #141b41;
+}
+
+#options-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.option-btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #141b41;
+    background-color: #edf2fb;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.option-btn:hover{
+    cursor: pointer;
 }
 
 .score-section{
@@ -59,7 +83,7 @@ body{
     gap: 40px;
 }
 
-#restart-button{
+#restart{
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -71,7 +95,7 @@ body{
     color: #141b41;
 }
 
-#restart-button:hover{
+#restart:hover{
     background-color: #141b41;
     color: #ff6d00;
 }
