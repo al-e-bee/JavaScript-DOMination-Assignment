@@ -90,6 +90,7 @@ function showScore(){
 function restart(){
     currentQuestionIndex = 0;
     score = 0;
+    quizQuestions.sort(() => Math.random() - 0.5);
     quizContainer.classList.remove("hidden");
     scoreContainer.classList.add("hidden");
     loadQuestion();
@@ -100,4 +101,5 @@ getNextQuestion.addEventListener("click", next);
 
 restartQuiz.addEventListener("click", restart);
 
+quizQuestions.sort(() => Math.random() - 0.5);
 loadQuestion();
