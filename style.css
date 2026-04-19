@@ -112,6 +112,7 @@ body{
     color: #ff6d00;
 }
 
-#score-container.hidden{
+#score-container.hidden,
+#quiz-container.hidden{
     display: none;
 }

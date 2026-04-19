@@ -80,6 +80,7 @@ function next(){
 }
 
 function showScore(){
+    console.log(`Quiz is over! Hiding the quiz now...`);
     quizContainer.classList.add("hidden");
     scoreContainer.classList.remove("hidden");
     scoreText.innerText = `${score} out of ${quizQuestions.length}`;
